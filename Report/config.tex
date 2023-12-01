@@ -1,0 +1,69 @@
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage[toc]{appendix}
+\usepackage{lipsum}
+\usepackage[export]{adjustbox}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{epsfig,graphics}
+\usepackage{graphicx}
+\usepackage{titlesec}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Details of your dissertation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the following fields.
+\newcommand{\projectTitle}{Coursework 2 --- Evaluation}
+\newcommand{\fullname}{Minoru Kishinami(sc21m2k), William Neild(sc21wsn), Brooklyn McSwiney(ed20b3m)}
+\newcommand{\module}{COMP3736 Information Visualisation}
+	% e.g. "COMP3931 Individual Project".
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Change the geometry of the page to have a 25 mm binding edge
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=25mm,
+ right=25mm,
+ top=25mm,
+ bottom=20mm,
+ }
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands to set the line spacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %\singlespacing
+ \onehalfspacing
+ %\doublespacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some shortcuts that maybe useful
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareTextCommandDefault{\textcopyright}{\textcircled{c}}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography style: choose one and make sure you have the relevant .bst file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{abbrv}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout for the front cover !!!!! YOU SHOULD NOT HAVE TO CHANGE THIS!!!!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\newcommand{\frontcover}{
+% The title page:
+\begin{titlepage}
+
+\centering
+\textbf{\Large\projectTitle}\\
+\vspace*{10mm}
+\module\\
+\vspace*{10mm}
+\textbf{\large\fullname}\\
+\restoregeometry
+\end{titlepage}
+}

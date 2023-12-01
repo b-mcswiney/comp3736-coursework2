@@ -1,0 +1,27 @@
+\documentclass[11pt,a4paper,oneside]{article}
+
+% Include the configuration file for layout.
+\input{config.tex}
+
+\begin{document}
+
+\frontcover
+
+\tableofcontents
+
+\include{./Sections/introduction}
+\include{./Sections/method}
+\include{./Sections/procedure}
+\include{./Sections/results}
+\include{./Sections/conclusion}
+\include{./Sections/appendix}
+
+% % Adds references to the table of contents.
+% \addcontentsline{toc}{chapter}{References}
+
+% All your bibtex entries should go in the file called "refs.bib".
+\bibliography{refs}
+
+
+\end{document}
+
