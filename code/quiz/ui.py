@@ -109,6 +109,7 @@ class QuizUI:
         answer = self.user_choice.get()
 
         # Check if answer is null. If so quit out of sequence
+        # WARNING: THIS CHECK DOES NOT WORK
         if answer == "":
             return
 
