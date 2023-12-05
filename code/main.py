@@ -1,4 +1,4 @@
-from action_logging.aciton_logger import log_action
+from code.action_logging.action_logger import log_action
 from quiz.question import Question
 from quiz.controller import QuizController
 from quiz.ui import QuizUI

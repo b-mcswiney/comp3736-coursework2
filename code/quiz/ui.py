@@ -1,8 +1,8 @@
 import uuid
 from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
-from action_logging.aciton_logger import log_action
-from quiz.controller import QuizController
-from quiz.question import Question
+from action_logging.action_logger import log_action
+from controller import QuizController
+from question import Question
 
 
 class QuizUI:
