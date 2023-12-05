@@ -1,7 +1,7 @@
 import uuid
 import os
-from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button, PhotoImage, Image
-# from PIL import Image, ImageTk
+from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button, PhotoImage
+from PIL import Image, ImageTk
 from action_logging.action_logger import log_action
 from quiz.controller import QuizController
 from quiz.question import Question
@@ -30,6 +30,7 @@ class QuizUI:
                                                          'Ariel', 15, 'italic')
                                                      )
         self.canvas.grid(row=2, column=0, columnspan=2, pady=50)
+        self.graph_1 = self.canvas.create_image(10, 100, image="")
         self.display_question()
 
         # Display graphs
@@ -78,11 +79,14 @@ class QuizUI:
 
         # image = Image.open(abs_path)
         # image = image.resize((500, 400), Image.Resampling.BILINEAR)
-        image_tk = PhotoImage(file=abs_path)
+        image = ImageTk.PhotoImage(Image.open(abs_path))
         # photoimage = image_tk.subsample()
+        
+        self.canvas.itemconfig(self.graph_1, image=image)
+        
 
-        image_button = Button(self.window, image = image_tk, compound="left")
-        image_button.place(x=x_pos, y=100)
+        # image_button = Button(self.window, image = image_tk, compound="left")
+        # image_button.place(x=x_pos, y=100)
 
     def answer_buttons(self):
         """Function to create answer buttons"""
