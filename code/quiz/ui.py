@@ -1,8 +1,10 @@
 import uuid
+import os
 from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
+from PIL import Image, ImageTk
 from action_logging.action_logger import log_action
-from controller import QuizController
-from question import Question
+from quiz.controller import QuizController
+from quiz.question import Question
 
 
 class QuizUI:
@@ -16,14 +18,11 @@ class QuizUI:
         # Setup for window
         self.window = Tk()
         self.window.title("Information Vis coursework 2 Experiment")
-        self.window.geometry("850x530")
-
-        # Display the title
-        self.display_title()
+        self.window.geometry("1080x720")
 
         # Create area for questions
         self.canvas = Canvas(width=800, height=250)
-        self.question_text = self.canvas.create_text(400, 125,
+        self.question_text = self.canvas.create_text(540, 25,
                                                      text="Question here",
                                                      width=680,
                                                      fill="#375362",
@@ -32,6 +31,10 @@ class QuizUI:
                                                      )
         self.canvas.grid(row=2, column=0, columnspan=2, pady=50)
         self.display_question()
+
+        # Display graphs
+        self.display_graph(self.controller.current_question.image_path1, 10)
+        self.display_graph(self.controller.current_question.image_path2, 520)
 
         # Create StringVar to store user choice
         self.user_choice = StringVar()
@@ -45,7 +48,7 @@ class QuizUI:
                              width=10, bg="green", fg="white", font=("ariel", 16, "bold"))
 
         # palcing the button on the screen
-        next_button.place(x=350, y=460)
+        next_button.place(x=440, y=650)
 
         # Run main loop
         self.window.mainloop()
@@ -64,6 +67,22 @@ class QuizUI:
         text = self.controller.next_question()
         self.canvas.itemconfig(self.question_text, text=text)
 
+    def display_graph(self, image_path, x_pos):
+        """Function to display given graph to given x position"""
+
+        if os.path.isfile(image_path):
+            abs_path = os.path.abspath(self.controller.current_question.image_path1)
+            print('image exists')
+        else:
+            print('image does not exits')
+
+        image = Image.open(abs_path)
+        image = image.resize((500, 400), Image.Resampling.BILINEAR)
+        image_tk = ImageTk.PhotoImage(image)
+
+        image_button = Button(self.window, image = image_tk, text="A")
+        image_button.place(x=x_pos, y=100)
+
     def answer_buttons(self):
         """Function to create answer buttons"""
 
@@ -71,7 +90,7 @@ class QuizUI:
         answers = []
 
         # Position of first option
-        y_pos = 220
+        x_pos = 440
 
         # Create button for each answer
         while len(answers) < 2:
@@ -84,9 +103,9 @@ class QuizUI:
             # Add new button to list of answers
             answers.append(radio_btn)
 
-            radio_btn.place(x=200, y=y_pos)
+            radio_btn.place(x=x_pos, y=600)
 
-            y_pos = y_pos + 50
+            x_pos = x_pos + 100
 
         return answers
 

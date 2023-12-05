@@ -1,4 +1,4 @@
-from question import Question
+from quiz.question import Question
 
 
 class QuizController:
