@@ -1,0 +1,15 @@
+Session, Timestamp, Quiz_location, Action_type, parameters
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:09.245306, QUESTION 1, SUBMIT, answer=A; correct=False; graph=line; 
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:50.432863, QUESTION 2, SUBMIT, answer=B; correct=False; graph=area; 
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:51.013472, QUESTION 2, SUBMIT, answer=B; correct=False; graph=area; 
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:51.155003, QUESTION 2, SUBMIT, answer=B; correct=False; graph=area; 
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:51.318451, QUESTION 2, SUBMIT, answer=B; correct=False; graph=area; 
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:51.475540, QUESTION 2, SUBMIT, answer=B; correct=False; graph=area; 
+492a7be1-f273-4905-b090-88cfe658aceb, 2023-12-04 09:04:51.656020, QUESTION 2, SUBMIT, answer=B; correct=False; graph=area; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:17.686973, QUESTION 1, SUBMIT, answer=None; correct=False; graph=line; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:18.288406, QUESTION 2, SUBMIT, answer=None; correct=False; graph=area; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:18.445848, QUESTION 2, SUBMIT, answer=None; correct=False; graph=area; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:18.615467, QUESTION 2, SUBMIT, answer=None; correct=False; graph=area; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:18.794446, QUESTION 2, SUBMIT, answer=None; correct=False; graph=area; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:18.965499, QUESTION 2, SUBMIT, answer=None; correct=False; graph=area; 
+054a4714-2ca0-45e6-a523-a4310d870b09, 2023-12-04 09:05:19.145652, QUESTION 2, SUBMIT, answer=None; correct=False; graph=area; 
