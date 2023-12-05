@@ -1,14 +1,13 @@
 import uuid
-import os
-from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button, PhotoImage
-from PIL import Image, ImageTk
+from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
+
+from PIL import ImageTk, Image
 from action_logging.action_logger import log_action
-from quiz.controller import QuizController
-from quiz.question import Question
 
 
 class QuizUI:
     """User interface for the quiz"""
+
     def __init__(self, controller) -> None:
 
         # Define session (lazy solution)
@@ -21,7 +20,7 @@ class QuizUI:
         self.window.geometry("1080x720")
 
         # Create area for questions
-        self.canvas = Canvas(width=800, height=250)
+        self.canvas = Canvas(self.window, width=800, height=250)
         self.question_text = self.canvas.create_text(540, 25,
                                                      text="Question here",
                                                      width=680,
@@ -30,12 +29,14 @@ class QuizUI:
                                                          'Ariel', 15, 'italic')
                                                      )
         self.canvas.grid(row=2, column=0, columnspan=2, pady=50)
-        self.graph_1 = self.canvas.create_image(10, 100, image="")
         self.display_question()
 
         # Display graphs
-        self.display_graph(self.controller.current_question.image_path1, 10)
-        # self.display_graph(self.controller.current_question.image_path2, 520)
+        img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
+        self.canvas.create_image(10, 100, image=img1)
+
+        img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
+        self.canvas.create_image(500, 100, image=img2)
 
         # Create StringVar to store user choice
         self.user_choice = StringVar()
@@ -54,7 +55,6 @@ class QuizUI:
         # Run main loop
         self.window.mainloop()
 
-
     def display_title(self):
         """To display title"""
 
@@ -67,26 +67,6 @@ class QuizUI:
 
         text = self.controller.next_question()
         self.canvas.itemconfig(self.question_text, text=text)
-
-    def display_graph(self, image_path, x_pos):
-        """Function to display given graph to given x position"""
-
-        if os.path.isfile(image_path):
-            abs_path = os.path.abspath(self.controller.current_question.image_path1)
-            print('image exists')
-        else:
-            print('image does not exits')
-
-        # image = Image.open(abs_path)
-        # image = image.resize((500, 400), Image.Resampling.BILINEAR)
-        image = ImageTk.PhotoImage(Image.open(abs_path))
-        # photoimage = image_tk.subsample()
-        
-        self.canvas.itemconfig(self.graph_1, image=image)
-        
-
-        # image_button = Button(self.window, image = image_tk, compound="left")
-        # image_button.place(x=x_pos, y=100)
 
     def answer_buttons(self):
         """Function to create answer buttons"""
@@ -140,10 +120,10 @@ class QuizUI:
         # Check if answer is correct and send result to log file
         if self.controller.check_answer(answer):
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
-                    [f"answer={answer}", "correct=True", f"graph={self.controller.current_question.graph}"])
+                       [f"answer={answer}", "correct=True", f"graph={self.controller.current_question.graph}"])
         else:
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
-                    [f"answer={answer}", "correct=False", f"graph={self.controller.current_question.graph}"])
+                       [f"answer={answer}", "correct=False", f"graph={self.controller.current_question.graph}"])
 
         if self.controller.more_questions():
             # Moves to next to display next question and its options
