@@ -1,7 +1,7 @@
 import uuid
 import os
-from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
-from PIL import Image, ImageTk
+from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button, PhotoImage, Image
+# from PIL import Image, ImageTk
 from action_logging.action_logger import log_action
 from quiz.controller import QuizController
 from quiz.question import Question
@@ -34,7 +34,7 @@ class QuizUI:
 
         # Display graphs
         self.display_graph(self.controller.current_question.image_path1, 10)
-        self.display_graph(self.controller.current_question.image_path2, 520)
+        # self.display_graph(self.controller.current_question.image_path2, 520)
 
         # Create StringVar to store user choice
         self.user_choice = StringVar()
@@ -76,11 +76,12 @@ class QuizUI:
         else:
             print('image does not exits')
 
-        image = Image.open(abs_path)
-        image = image.resize((500, 400), Image.Resampling.BILINEAR)
-        image_tk = ImageTk.PhotoImage(image)
+        # image = Image.open(abs_path)
+        # image = image.resize((500, 400), Image.Resampling.BILINEAR)
+        image_tk = PhotoImage(file=abs_path)
+        # photoimage = image_tk.subsample()
 
-        image_button = Button(self.window, image = image_tk, text="A")
+        image_button = Button(self.window, image = image_tk, compound="left")
         image_button.place(x=x_pos, y=100)
 
     def answer_buttons(self):
