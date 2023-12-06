@@ -1,12 +1,14 @@
 import uuid
+import datetime
 from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
+
+from PIL import ImageTk, Image
 from action_logging.action_logger import log_action
-from controller import QuizController
-from question import Question
 
 
 class QuizUI:
     """User interface for the quiz"""
+
     def __init__(self, controller) -> None:
 
         # Define session (lazy solution)
@@ -16,14 +18,11 @@ class QuizUI:
         # Setup for window
         self.window = Tk()
         self.window.title("Information Vis coursework 2 Experiment")
-        self.window.geometry("850x530")
-
-        # Display the title
-        self.display_title()
+        self.window.geometry("1200x700")
 
         # Create area for questions
-        self.canvas = Canvas(width=800, height=250)
-        self.question_text = self.canvas.create_text(400, 125,
+        self.canvas = Canvas(self.window, width=1200, height=720)
+        self.question_text = self.canvas.create_text(540, 25,
                                                      text="Question here",
                                                      width=680,
                                                      fill="#375362",
@@ -32,6 +31,17 @@ class QuizUI:
                                                      )
         self.canvas.grid(row=2, column=0, columnspan=2, pady=50)
         self.display_question()
+
+        # Display graphs
+
+        img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
+        self.image1 = self.canvas.create_image(300, 270, image=img1)
+        # self.canvas.grid(column=2, row=2)
+
+        img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
+        self.image2 = self.canvas.create_image(900, 270, image=img2)
+
+
 
         # Create StringVar to store user choice
         self.user_choice = StringVar()
@@ -45,11 +55,10 @@ class QuizUI:
                              width=10, bg="green", fg="white", font=("ariel", 16, "bold"))
 
         # palcing the button on the screen
-        next_button.place(x=350, y=460)
+        next_button.place(x=510, y=650)
 
         # Run main loop
         self.window.mainloop()
-
 
     def display_title(self):
         """To display title"""
@@ -64,6 +73,16 @@ class QuizUI:
         text = self.controller.next_question()
         self.canvas.itemconfig(self.question_text, text=text)
 
+    def update_graphs(self):
+        global img1
+        global img2
+
+        img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
+        self.canvas.itemconfig(self.image1, image=img1)
+
+        img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
+        self.canvas.itemconfig(self.image2, image=img2)
+
     def answer_buttons(self):
         """Function to create answer buttons"""
 
@@ -71,7 +90,7 @@ class QuizUI:
         answers = []
 
         # Position of first option
-        y_pos = 220
+        x_pos = 510
 
         # Create button for each answer
         while len(answers) < 2:
@@ -84,9 +103,9 @@ class QuizUI:
             # Add new button to list of answers
             answers.append(radio_btn)
 
-            radio_btn.place(x=200, y=y_pos)
+            radio_btn.place(x=x_pos, y=600)
 
-            y_pos = y_pos + 50
+            x_pos = x_pos + 100
 
         return answers
 
@@ -116,15 +135,16 @@ class QuizUI:
         # Check if answer is correct and send result to log file
         if self.controller.check_answer(answer):
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
-                    [f"answer={answer}", "correct=True", f"graph={self.controller.current_question.graph}"])
+                       [f"answer={answer}", "correct=True", f"graph={self.controller.current_question.graph}"])
         else:
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
-                    [f"answer={answer}", "correct=False", f"graph={self.controller.current_question.graph}"])
+                       [f"answer={answer}", "correct=False", f"graph={self.controller.current_question.graph}"])
 
         if self.controller.more_questions():
             # Moves to next to display next question and its options
             self.display_question()
             self.display_answer_btns()
+            self.update_graphs()
 
         else:
             self.window.destroy
