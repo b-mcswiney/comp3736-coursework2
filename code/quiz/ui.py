@@ -13,6 +13,10 @@ class QuizUI:
 
         # Define session (lazy solution)
         self.session = uuid.uuid4()
+
+        # Log start of quiz
+        log_action(self.session, "QUIZ", "START", [])
+
         # Controller for the quiz
         self.controller = controller
         # Setup for window
@@ -142,4 +146,7 @@ class QuizUI:
             self.update_graphs()
 
         elif answer != "None":
+
+            # Log end of quiz
+            log_action(self.session, "QUIZ", "END", [])
             self.window.destroy
