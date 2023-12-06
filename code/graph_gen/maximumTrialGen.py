@@ -14,10 +14,14 @@ bronze_medals = get_bronze_medal_data()
 # plt.xlabel("Country name")
 # plt.ylabel("number of medals")
 # plt.legend()
-# plt.title("Number of medals won (random data generated)")
+# plt.title("A - Number of medals won (random data generated)")
 
-# plt.savefig("code/assets/line-max-trial-4.png", bbox_inches="tight")
+# plt.savefig("assets/line-max-trial-4.png", bbox_inches="tight")
 
+count = 0
+while(count < 4):
+    print("total: ",bronze_medals[count] + silver_medals[count] + gold_medals[count])
+    count=count+1
 
 plt.stackplot(country_names, gold_medals, silver_medals, bronze_medals, labels=["Gold", "Silver", "Bronze"])
 
@@ -26,4 +30,4 @@ plt.ylabel("number of medals")
 plt.legend()
 plt.title("B - Number of medals won (random data generated)")
 
-plt.savefig("code/assets/area-max-trial-4.png", bbox_inches="tight")
+plt.savefig("assets/area-max-trial-6.png", bbox_inches="tight")

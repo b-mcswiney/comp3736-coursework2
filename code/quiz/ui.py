@@ -27,7 +27,7 @@ class QuizUI:
 
         # Create area for questions
         self.canvas = Canvas(self.window, width=1200, height=720)
-        self.question_text = self.canvas.create_text(540, 25,
+        self.question_text = self.canvas.create_text(550, 20,
                                                      text="Question here",
                                                      width=680,
                                                      fill="#375362",
