@@ -1,4 +1,5 @@
 import uuid
+import datetime
 from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
 
 from PIL import ImageTk, Image
@@ -17,10 +18,10 @@ class QuizUI:
         # Setup for window
         self.window = Tk()
         self.window.title("Information Vis coursework 2 Experiment")
-        self.window.geometry("1080x720")
+        self.window.geometry("1200x700")
 
         # Create area for questions
-        self.canvas = Canvas(self.window, width=800, height=250)
+        self.canvas = Canvas(self.window, width=1200, height=720)
         self.question_text = self.canvas.create_text(540, 25,
                                                      text="Question here",
                                                      width=680,
@@ -32,11 +33,15 @@ class QuizUI:
         self.display_question()
 
         # Display graphs
+
         img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
-        self.canvas.create_image(10, 100, image=img1)
+        self.image1 = self.canvas.create_image(300, 270, image=img1)
+        # self.canvas.grid(column=2, row=2)
 
         img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
-        self.canvas.create_image(500, 100, image=img2)
+        self.image2 = self.canvas.create_image(900, 270, image=img2)
+
+
 
         # Create StringVar to store user choice
         self.user_choice = StringVar()
@@ -50,7 +55,7 @@ class QuizUI:
                              width=10, bg="green", fg="white", font=("ariel", 16, "bold"))
 
         # palcing the button on the screen
-        next_button.place(x=440, y=650)
+        next_button.place(x=510, y=650)
 
         # Run main loop
         self.window.mainloop()
@@ -68,6 +73,16 @@ class QuizUI:
         text = self.controller.next_question()
         self.canvas.itemconfig(self.question_text, text=text)
 
+    def update_graphs(self):
+        global img1
+        global img2
+
+        img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
+        self.canvas.itemconfig(self.image1, image=img1)
+
+        img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
+        self.canvas.itemconfig(self.image2, image=img2)
+
     def answer_buttons(self):
         """Function to create answer buttons"""
 
@@ -75,7 +90,7 @@ class QuizUI:
         answers = []
 
         # Position of first option
-        x_pos = 440
+        x_pos = 510
 
         # Create button for each answer
         while len(answers) < 2:
@@ -129,6 +144,7 @@ class QuizUI:
             # Moves to next to display next question and its options
             self.display_question()
             self.display_answer_btns()
+            self.update_graphs()
 
         else:
             self.window.destroy
