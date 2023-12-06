@@ -4,6 +4,7 @@ from tkinter import Tk, Label, Canvas, StringVar, Radiobutton, Button
 
 from PIL import ImageTk, Image
 from action_logging.action_logger import log_action
+import os
 
 
 class QuizUI:
@@ -38,11 +39,11 @@ class QuizUI:
 
         # Display graphs
 
-        img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
+        img1 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path1)))
         self.image1 = self.canvas.create_image(300, 270, image=img1)
         # self.canvas.grid(column=2, row=2)
 
-        img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
+        img2 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path2)))
         self.image2 = self.canvas.create_image(900, 270, image=img2)
 
 
@@ -81,10 +82,10 @@ class QuizUI:
         global img1
         global img2
 
-        img1 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path1))
+        img1 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path1)))
         self.canvas.itemconfig(self.image1, image=img1)
 
-        img2 = ImageTk.PhotoImage(Image.open(self.controller.current_question.image_path2))
+        img2 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path2)))
         self.canvas.itemconfig(self.image2, image=img2)
 
     def answer_buttons(self):
