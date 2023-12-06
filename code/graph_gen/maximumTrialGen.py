@@ -16,7 +16,7 @@ bronze_medals = get_bronze_medal_data()
 # plt.legend()
 # plt.title("Number of medals won (random data generated)")
 
-# plt.savefig("code/assets/line-max-trial-2.png", bbox_inches="tight")
+# plt.savefig("code/assets/line-max-trial-4.png", bbox_inches="tight")
 
 
 plt.stackplot(country_names, gold_medals, silver_medals, bronze_medals, labels=["Gold", "Silver", "Bronze"])
@@ -24,6 +24,6 @@ plt.stackplot(country_names, gold_medals, silver_medals, bronze_medals, labels=[
 plt.xlabel("Country name")
 plt.ylabel("number of medals")
 plt.legend()
-plt.title("Number of medals won (random data generated)")
+plt.title("B - Number of medals won (random data generated)")
 
-plt.savefig("code/assets/area-max-trial-2.png", bbox_inches="tight")
+plt.savefig("code/assets/area-max-trial-4.png", bbox_inches="tight")
