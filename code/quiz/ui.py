@@ -127,24 +127,19 @@ class QuizUI:
 
         answer = self.user_choice.get()
 
-        # Check if answer is null. If so quit out of sequence
-        # WARNING: THIS CHECK DOES NOT WORK
-        if answer == "":
-            return
-
         # Check if answer is correct and send result to log file
-        if self.controller.check_answer(answer):
+        if self.controller.check_answer(answer) and answer != "None":
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
                        [f"answer={answer}", "correct=True", f"graph={self.controller.current_question.graph}"])
-        else:
+        elif answer != "None":
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
                        [f"answer={answer}", "correct=False", f"graph={self.controller.current_question.graph}"])
 
-        if self.controller.more_questions():
+        if self.controller.more_questions() and answer != "None":
             # Moves to next to display next question and its options
             self.display_question()
             self.display_answer_btns()
             self.update_graphs()
 
-        else:
+        elif answer != "None":
             self.window.destroy
