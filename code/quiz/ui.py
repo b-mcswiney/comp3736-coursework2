@@ -150,4 +150,4 @@ class QuizUI:
 
             # Log end of quiz
             log_action(self.session, "QUIZ", "END", [])
-            self.window.destroy
+            self.window.destroy()
