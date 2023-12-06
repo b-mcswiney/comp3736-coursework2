@@ -94,10 +94,10 @@ class QuizUI:
         answers = []
 
         # Position of first option
-        x_pos = 510
+        x_pos = 385
 
         # Create button for each answer
-        while len(answers) < 2:
+        while len(answers) < 5:
             radio_btn = Radiobutton(self.window,
                                     text="",
                                     variable=self.user_choice,
@@ -132,20 +132,20 @@ class QuizUI:
         answer = self.user_choice.get()
 
         # Check if answer is correct and send result to log file
-        if self.controller.check_answer(answer) and answer != "None":
+        if self.controller.check_answer(answer) and answer != "None" and answer != "":
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
                        [f"answer={answer}", "correct=True", f"graph={self.controller.current_question.graph}"])
-        elif answer != "None":
+        elif answer != "None" and answer != "":
             log_action(self.session, f"QUESTION {self.controller.q_numb}", "SUBMIT",
                        [f"answer={answer}", "correct=False", f"graph={self.controller.current_question.graph}"])
 
-        if self.controller.more_questions() and answer != "None":
+        if self.controller.more_questions() and answer != "None" and answer != "":
             # Moves to next to display next question and its options
             self.display_question()
             self.display_answer_btns()
             self.update_graphs()
 
-        elif answer != "None":
+        elif answer != "None" and answer != "":
 
             # Log end of quiz
             log_action(self.session, "QUIZ", "END", [])
