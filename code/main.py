@@ -2,47 +2,55 @@ from quiz.question import Question
 from quiz.controller import QuizController
 from quiz.ui import QuizUI
 
-
-# Just deine 1 question for testing purposes
-question = Question("Which Graph shows more gold medals for the UK?",
+# Line max trial 1 and 2
+question = Question("Which Graph shows more gold medals for GB?",
                     "assets/line-max-trial-1.png",
                     "assets/line-max-trial-2.png", "A", ["A", "", "", "","B"], "line")
 question2 = Question("Which Graph shows more total medals for the USA?",
                     "assets/line-max-trial-1.png",
                     "assets/line-max-trial-2.png", "B", ["A", "", "", "", "B"], "line")
-question3 = Question("Which Graph shows more gold medals for the UK?",
+
+# Area max trial 1 and 2
+question3 = Question("Which Graph shows more gold medals for GB?",
                     "assets/area-max-trial-1.png",
                     "assets/area-max-trial-2.png", "B", ["A", "", "", "", "B"], "area")
 question4 = Question("Which Graph shows more total medals for the USA?",
                     "assets/area-max-trial-1.png",
                     "assets/area-max-trial-2.png", "B", ["A", "", "", "", "B"], "area")
 
-### Remake
-question5 = Question("In which Graph did UK win less bronze medals?",
+# Line max trial 3 and 4
+question5 = Question("In which Graph did GB win less bronze medals?",
                     "assets/line-max-trial-3.png", 
                     "assets/line-max-trial-4.png", "B", ["A", "", "", "", "B"], "line")
 question6 = Question("What is the sum of the silver medals won by Germany in both graphs?",
                     "assets/line-max-trial-3.png",
                     "assets/line-max-trial-4.png", "44", ["38", "40", "44", "46", "48"], "line")
-question7 = Question("In which Graph did UK win less bronze medals?",
+
+# Area max trial 3 and 4
+question7 = Question("In which Graph did GB win less bronze medals?",
                     "assets/area-max-trial-3.png",
                     "assets/area-max-trial-4.png", "A", ["A", "", "", "", "B"], "area")
 question8 = Question("What is the sum of the silver medals won by Germany in both graphs?",
                     "assets/area-max-trial-3.png",
                     "assets/area-max-trial-4.png", "37", ["33", "35", "37", "39", "41"], "area")
 
+# line years trial 1 and 2
 question9 = Question("In Graph A, which year shows the least amount of total medals gained?",
                     "assets/line-years-trial-1.png", # 109, 111, 112, 
                     "assets/line-years-trial-2.png", "Year 1", ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"], "line")
 question10 = Question("In Graph B, which year shows the least amount of total medals gained??",
                     "assets/line-years-trial-1.png",
                     "assets/line-years-trial-2.png", "Year 2", ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"], "line")
+
+# area years trial 1 and 2
 question11 = Question("In Graph A, which year shows the least amount of total medals gained?",
                     "assets/area-years-trial-1.png",
                     "assets/area-years-trial-2.png", "Year 3", ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"], "area")
 question12 = Question("In Graph B, which year shows the least amount of total medals gained?",
                     "assets/area-years-trial-1.png",
                     "assets/area-years-trial-2.png", "Year 4", ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"], "area")
+
+# line max trial 5 and 6
 question13 = Question("In Graph A, which country got the most medals?",
                     "assets/line-max-trial-5.png",
                     "assets/line-max-trial-6.png", "GB", ["GB", "AUS", "JP", "GER", ""], "line")
@@ -55,6 +63,8 @@ question15 = Question("In Graph B, which country got the most medals?",
 question16 = Question("In Graph B, which country got the 2nd highest amount of medals?",
                     "assets/line-max-trial-5.png",
                     "assets/line-max-trial-6.png", "AUS", ["GB", "AUS", "JP", "GER", ""], "line")
+
+# area max trial 5 and 6
 question17 = Question("In Graph A, which country got the most medals?",
                     "assets/area-max-trial-5.png",
                     "assets/area-max-trial-6.png", "GER", ["GB", "AUS", "JP", "GER", ""], "area")
@@ -67,6 +77,7 @@ question19 = Question("In Graph B, which country got the most medals?",
 question20 = Question("In Graph B, which country got the 2nd highest amount of medals?",
                     "assets/area-max-trial-5.png",
                     "assets/area-max-trial-6.png", "GB", ["GB", "AUS", "JP", "GER", ""], "area")
+
 question21 = Question("Which graphtype do you find easier to read??",
                     "assets/line-max-trial-1.png",
                     "assets/area-max-trial-1.png", "line", ["line", "", "", "", "area"], "")

@@ -15,7 +15,7 @@ GER: 11-17, 10-20, 13-15
 """
 
 def get_country_list():
-    return ["Great Britain", "Australia", "Japan", "Germany"]
+    return ["USA", "Great Britain", "Australia", "Japan", "Germany"]
 
 
 def get_year_list():
@@ -27,11 +27,22 @@ def get_5_american_years():
             [r.randint(30, 38), r.randint(30, 38), r.randint(30, 38), r.randint(30, 38), r.randint(30, 38)]]
 
 def get_gold_medal_data():
-    return [ r.randint(13, 22), r.randint(8, 14), r.randint(7, 12), r.randint(11, 17)]
+    return [r.randint(36, 48), r.randint(13, 22), r.randint(8, 14), r.randint(7, 12), r.randint(11, 17)]
 
 def get_silver_medal_data():
-    return [ r.randint(13, 23), r.randint(11, 15), r.randint(8, 14), r.randint(10, 20)]
+    return [r.randint(22, 37), r.randint(13, 23), r.randint(11, 15), r.randint(8, 14), r.randint(10, 20)]
 
 def get_bronze_medal_data():
-    return [r.randint(12, 19), r.randint(10, 17), r.randint(8, 21), r.randint(13, 15)]
+    return [r.randint(30, 38), r.randint(12, 19), r.randint(10, 17), r.randint(8, 21), r.randint(13, 15)]
+
+
+## Obvious lower numbers
+def get_lower_gold_data():
+    return [r.randint(36, 48) - 5, r.randint(13, 22) - 5, r.randint(8, 14) - 5, r.randint(7, 12) - 5, r.randint(11, 17) - 5]
+
+def get_lower_silver_data():
+    return [r.randint(22, 37) - 5, r.randint(13, 23) - 10, r.randint(11, 15), r.randint(8, 14) - 5, r.randint(10, 20) - 5]
+
+def get_lower_bronze_data():
+    return [r.randint(30, 38) - 5, r.randint(12, 19) - 5, r.randint(10, 17) - 5, r.randint(8, 21) - 5, r.randint(13, 15) - 5]    
 

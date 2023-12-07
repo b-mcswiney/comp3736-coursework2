@@ -79,6 +79,13 @@ class QuizUI:
         self.canvas.itemconfig(self.question_text, text=text)
 
     def update_graphs(self):
+        
+        # Question indexes that do not reuqire the 1st graph
+        hide_img_1 = [10, 12, 15, 16, 19, 20]
+
+        # Question indexes that do not require the 2nd graph
+        hide_img_2 = [9, 11, 13, 14, 17, 18]
+
         global img1
         global img2
 
@@ -87,6 +94,22 @@ class QuizUI:
 
         img2 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path2)))
         self.canvas.itemconfig(self.image2, image=img2)
+
+        if self.controller.q_numb in hide_img_1:
+            self.canvas.itemconfig(self.image1, state="hidden")
+            self.canvas.itemconfig(self.image2, state="normal")
+            self.canvas.move(self.image2, -300, 0)
+
+        elif self.controller.q_numb in hide_img_2:
+            self.canvas.itemconfig(self.image1, state="normal")
+            self.canvas.itemconfig(self.image2, state="hidden")
+            self.canvas.move(self.image1, 300, 0)
+        elif self.controller.q_numb == 21:
+            self.canvas.itemconfig(self.image2, state="normal")
+            self.canvas.itemconfig(self.image1, state="normal")
+            self.canvas.move(self.image1, 300, 0)
+            self.canvas.move(self.image2, -300, 0)
+
 
     def answer_buttons(self):
         """Function to create answer buttons"""
