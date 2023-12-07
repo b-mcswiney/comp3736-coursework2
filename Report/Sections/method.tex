@@ -1,10 +1,83 @@
 \section{Method}
 
-\subsection{Participants}
-<the number, informed consent, no payment>
 
 \subsection{Materials}
-<state the language/libraries used, and describe and illustrate how the softwareworked>
+\subsubsection{Language and Libraries}
+The language used to perform the experiment tasks (seen in Figure 1) was python. The following libraries were used in order to achieve this:
+\begin{itemize}
+    \setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+    \item \text{Tkinter} --- Used for Graphical User Interface
+    \item \text{Pillow} --- Used for displaying images
+    \item \text{matplotlib.pyplot} --- Used for plotting graphs
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.85\textwidth]{quiz-example.png}
+    \caption{Screenshot of first question in the test.}
+\end{figure}
 
+\subsubsection{How the quiz works}
+\subsubsection*{Graph Generation}
+\begin{flushleft}
+    Before the quiz can be run a separate function called \verb|generate_graphs()| needs to be run to create the graphs.
+    This function uses pre-defined data that has been randomly generated from using real olympic medal data from
+    2008~\cite{olympics2008}, 2012~\cite{olympics2012} and 2016~\cite{olympics2016} to create a possible range of possible medals awarded.
+    Once the graphs have been generated the quiz does not require any other external assets to run, exclusing the libraries mentioned above.
+\end{flushleft}
+    
+\subsubsection*{Classes}
+\begin{flushleft}
+    The architecture of the quiz involves using 3 different classes to keep track of questions, question data and the user interface for the quiz.
+    The \verb|Question| class is used to store information involving the questions within the quiz. This information includes: the question itself, image paths 
+    for both graphs, the correct answer, all possible answers and the type of graph the question is about (this information is used for logging, discussed later).
+\end{flushleft}
+\begin{flushleft}
+    The next class we will discuss is that of the \verb|QuizController| class. This class is responsible for keeping track of the current state of the quiz itself.
+    To achieve this, the class keeps a list of all questions and a count of the current question number which is iterated upon whenever \verb|next_question()| is called. 
+    This class is also used to check if the quiz is over and if a user's answer to the current question is correct, achieved using \verb|more_questions()| and \verb|check_answer()| respectively.
+\end{flushleft}
+\begin{flushleft}
+    The final class needed for the quiz to function is the \verb|QuizUI| class. This class uses the controller to manage the state of the quiz while simultaneously displaying it to the user.
+    During initialisation the class creates all the \verb|tkinter| widgets necessary for the quizes interface (shown in Figure 1). The main loop of the program is contained within the 
+    next button which checks if the user has provided an input when pressed. Should the user have provided an input the button will then ask the controller if the user has gotten the question right
+    and log the user's answer to the question appropriately (log example shown in Table 1). The button will then ask the controller if the user has reached the end of the quiz or not, should the user
+    have reached the end of the quiz the window displaying the quiz will close to prevent more inputs being made by the user. On the other hand, should there be more questions the controller will iterate the question number
+    and the current UI will be replaced with data pertaining to the new current question.
+\end{flushleft}
+\pagebreak
+\subsubsection*{Example Logfile}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+        Session & Timestamp & Quiz\_location & Action\_type & parameters \\ \hline
+        9 & 17:41:39 & QUIZ & START & ~ \\ \hline
+        9 & 17:41:41 & QUESTION 1 & SUBMIT & answer=A; correct=True; graph=line; \\ \hline
+        9 & 17:41:42 & QUESTION 2 & SUBMIT & answer=A; correct=True; graph=line; \\ \hline
+        9 & 17:41:43 & QUESTION 3 & SUBMIT & answer=A; correct=True; graph=area; \\ \hline
+        9 & 17:41:44 & QUESTION 4 & SUBMIT & answer=A; correct=True; graph=area; \\ \hline
+        9 & 17:41:45 & QUESTION 5 & SUBMIT & answer=B; correct=True; graph=line; \\ \hline
+        9 & 17:41:46 & QUESTION 6 & SUBMIT & answer=25; correct=True; graph=line; \\ \hline
+        9 & 17:41:47 & QUESTION 7 & SUBMIT & answer=B; correct=True; graph=area; \\ \hline
+        9 & 17:41:48 & QUESTION 8 & SUBMIT & answer=31; correct=True; graph=area; \\ \hline
+        9 & 17:41:49 & QUESTION 9 & SUBMIT & answer=Year 3; correct=True; graph=line; \\ \hline
+        9 & 17:41:50 & QUESTION 10 & SUBMIT & answer=Year 2; correct=True; graph=line; \\ \hline
+        9 & 17:41:50 & QUESTION 11 & SUBMIT & answer=Year 2; correct=True; graph=area; \\ \hline
+        9 & 17:41:51 & QUESTION 12 & SUBMIT & answer=Year 1; correct=True; graph=area; \\ \hline
+        9 & 17:41:52 & QUESTION 13 & SUBMIT & answer=Year 1; correct=True; graph=line; \\ \hline
+        9 & 17:41:52 & QUESTION 14 & SUBMIT & answer=Year 1; correct=True; graph=area; \\ \hline
+        9 & 17:41:53 & QUESTION 15 & SUBMIT & answer=AUS; correct=True; graph=line; \\ \hline
+        9 & 17:41:54 & QUESTION 16 & SUBMIT & answer=JP; correct=True; graph=line; \\ \hline
+        9 & 17:41:55 & QUESTION 17 & SUBMIT & answer=GER; correct=True; graph=area; \\ \hline
+        9 & 17:41:55 & QUESTION 18 & SUBMIT & answer=GER; correct=True; graph=area; \\ \hline
+        9 & 17:41:57 & QUESTION 19 & SUBMIT & answer=Yes; correct=True; graph=mix; \\ \hline
+        9 & 17:41:58 & QUESTION 20 & SUBMIT & answer=No; correct=True; graph=mix; \\ \hline
+        9 & 17:41:59 & QUESTION 21 & SUBMIT & answer=line; correct=False; graph=N/A; \\ \hline
+        9 & 17:41:59 & QUIZ & END & ~ \\ \hline
+    \end{tabular}
+    \caption{Example log file. Note: In actual log file full unique session IDs and timestamps are used but for the purposes of demonstation these have been shortened.}
+\end{table}
 \subsection{Procedure}
 <describe what each participant did, in terms of the overall procedure and each trial>
