@@ -3,7 +3,7 @@ from graphGen import gen_line, gen_area
 def generate_graphs():
     country_list = ["USA", "Great Britain", "Australia", "Japan", "Germany"]
     country_list_short = ["Great Britain", "Australia", "Japan", "Germany"]
-    years_list = ["Year 1", "Year 2", "Year 3"]
+    tournament_list = ["1", "2", "3"]
 
     # x_labels, gold_medals, silver_medals, bronze_medals, graph_label, trial, graph_numb
     # Question 1 and 2
@@ -88,82 +88,82 @@ def generate_graphs():
 
     # Question 9
     gen_line(
-        years_list,
+        tournament_list,
         [38, 48, 46 -7],
         [33, 24, 22 - 4],
         [37, 36, 36 - 10 ],
         "B - ",
-        "years",
+        "tournament",
         2
     )
     # Question 10
     gen_line(
-        years_list,
+        tournament_list,
         [32, 48 + 5, 45],
         [36, 24 + 10, 34],
         [44, 36 + 10, 31],
         "A - ",
-        "years",
+        "tournament",
         1
     )
 
     # Question 11 and 12
     gen_area(
-        years_list,
+        tournament_list,
         [45, 41, 39],
         [29, 25, 25],
         [38, 35, 34],
         "A - ",
-        "years",
+        "tournament",
         1
     )
     gen_area(
-        years_list,
+        tournament_list,
         [46, 36, 41],
         [29, 22, 30],
         [37, 35, 33],
         "B - ",
-        "years",
+        "tournament",
         2
     )
 
     # Question 13
     gen_line(
-        years_list,
+        tournament_list,
         [32, 38, 35],
         [31, 39, 32],
         [33, 24, 34],
         "A - ",
-        "years",
+        "tournament",
         3
     )
     gen_line(
-        years_list,
+        tournament_list,
         [44, 36, 31],
         [32, 38, 35],
         [36, 24, 34],
         "B - ",
-        "years",
+        "tournament",
         4
     )
 
     # Question 14
     gen_area(
-        years_list,
+        tournament_list,
         [32, 38, 35],
         [31, 39, 32],
         [33, 24, 34],
         "A - ",
-        "years",
+        "tournament",
         3
     )
     gen_area(
-        years_list,
+        tournament_list,
         [44, 36, 31],
         [32, 38, 35],
         [36, 24, 34],
         "B - ",
-        "years",
+        "tournament",
         4
     )
 
@@ -180,7 +180,7 @@ def generate_graphs():
     gen_line(
         country_list_short,
         [14, 18, 7, 13],
-        [17, 17, 8, 5],
+        [20, 13, 17, 5],
         [7, 9, 8, 10],
         "",
         "country",
