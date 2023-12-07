@@ -38,11 +38,18 @@ def get_bronze_medal_data():
 
 ## Obvious lower numbers
 def get_lower_gold_data():
-    return [r.randint(36, 48) - 5, r.randint(13, 22) - 5, r.randint(8, 14) - 5, r.randint(7, 12) - 5, r.randint(11, 17) - 5]
+    return [r.randint(13, 22) - 5, r.randint(8, 14) - 5, r.randint(7, 12) - 5, r.randint(11, 17) - 5]
 
 def get_lower_silver_data():
-    return [r.randint(22, 37) - 5, r.randint(13, 23) - 10, r.randint(11, 15), r.randint(8, 14) - 5, r.randint(10, 20) - 5]
+    return [r.randint(13, 23) - 10, r.randint(11, 15), r.randint(8, 14) - 5, r.randint(10, 20) - 5]
 
 def get_lower_bronze_data():
-    return [r.randint(30, 38) - 5, r.randint(12, 19) - 5, r.randint(10, 17) - 5, r.randint(8, 21) - 5, r.randint(13, 15) - 5]    
+    return [r.randint(12, 19) - 5, r.randint(10, 17) - 5, r.randint(8, 21) - 5, r.randint(13, 15) - 5]    
 
+print(get_5_american_years())
+print(get_5_american_years())
+print(get_5_american_years())
+
+# print(get_gold_medal_data())#
+# print(get_silver_medal_data())
+# print(get_bronze_medal_data())

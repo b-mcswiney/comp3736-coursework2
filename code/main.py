@@ -50,27 +50,32 @@ question12 = Question("In Graph B, which year shows the least amount of total me
                     "assets/area-years-trial-1.png",
                     "assets/area-years-trial-2.png", "Year 4", ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"], "area")
 
-# line max trial 5 and 6
+# line years trial 3 and 4
 question13 = Question("In Graph A, which country got the most medals?",
-                    "assets/line-max-trial-5.png",
-                    "assets/line-max-trial-6.png", "GB", ["GB", "AUS", "JP", "GER", ""], "line")
+                    "assets/line-years-trial-3.png",
+                    "assets/line-years-trial-4.png", "GB", ["GB", "AUS", "JP", "GER", ""], "line")
+# area years trial 3 and 4
 question14 = Question("In Graph A, which country got the 2nd highest amount of medals?",
-                    "assets/line-max-trial-5.png",
-                    "assets/line-max-trial-6.png", "GER", ["GB", "AUS", "JP", "GER", ""], "line")
+                    "assets/area-years-trial-3.png",
+                    "assets/area-years-trial-4.png", "GER", ["GB", "AUS", "JP", "GER", ""], "line")
+
+# line country trial 1 and 2
 question15 = Question("In Graph B, which country got the most medals?",
-                    "assets/line-max-trial-5.png",
-                    "assets/line-max-trial-6.png", "GB", ["GB", "AUS", "JP", "GER", ""], "line")
+                    "assets/line-country-trial-1.png",
+                    "assets/line-country-trial-2.png", "GB", ["GB", "AUS", "JP", "GER", ""], "line")
 question16 = Question("In Graph B, which country got the 2nd highest amount of medals?",
                     "assets/line-max-trial-5.png",
                     "assets/line-max-trial-6.png", "AUS", ["GB", "AUS", "JP", "GER", ""], "line")
 
-# area max trial 5 and 6
+# area country trial 1 and 2
 question17 = Question("In Graph A, which country got the most medals?",
                     "assets/area-max-trial-5.png",
                     "assets/area-max-trial-6.png", "GER", ["GB", "AUS", "JP", "GER", ""], "area")
 question18 = Question("In Graph A, which country got the 2nd highest amount of medals?",
                     "assets/area-max-trial-5.png",
                     "assets/area-max-trial-6.png", "AUS", ["GB", "AUS", "JP", "GER", ""], "area")
+
+# Comparison trials
 question19 = Question("In Graph B, which country got the most medals?",
                     "assets/area-max-trial-5.png",
                     "assets/area-max-trial-6.png", "GER", ["GB", "AUS", "JP", "GER", ""], "area")
