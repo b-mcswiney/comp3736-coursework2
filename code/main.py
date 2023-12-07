@@ -37,27 +37,27 @@ question8 = Question("What is the sum of the silver medals won by Germany in bot
 # line years trial 1 and 2
 question9 = Question("which year shows the least amount of total medals gained?",
                     "assets/line-years-trial-1.png", # Graph 2 shown
-                    "assets/line-years-trial-2.png", "Year 3", ["Year 1", "Year 2", "Year 3", "", ""], "line")
+                    "assets/line-years-trial-2.png", "Year 3", ["", "Year 1", "Year 2", "Year 3", ""], "line")
 question10 = Question("Which year shows the most amount of total medals gained??",
                     "assets/line-years-trial-1.png", # Graph 1 shown
-                    "assets/line-years-trial-2.png", "Year 2", ["Year 1", "Year 2", "Year 3", "", ""], "line")
+                    "assets/line-years-trial-2.png", "Year 2", ["", "Year 1", "Year 2", "Year 3", ""], "line")
 
 # area years trial 1 and 2
 question11 = Question("Which year shows the least amount of total medals gained?",
                     "assets/area-years-trial-1.png", # Graph 2 shown
-                    "assets/area-years-trial-2.png", "Year 2", ["Year 1", "Year 2", "Year 3", "", ""], "area")
+                    "assets/area-years-trial-2.png", "Year 2", ["", "Year 1", "Year 2", "Year 3", ""], "area")
 question12 = Question("Which year shows the most amount of total medals gained?",
                     "assets/area-years-trial-1.png", # Graph 1 shown
-                    "assets/area-years-trial-2.png", "Year 1", ["Year 1", "Year 2", "Year 3", "", ""], "area")
+                    "assets/area-years-trial-2.png", "Year 1", ["", "Year 1", "Year 2", "Year 3", ""], "area")
 
 # line years trial 3 and 4
 question13 = Question("Which year shows the most gold medals?",
                     "assets/line-years-trial-3.png", # Graph 2 shown
-                    "assets/line-years-trial-4.png", "Year 1", ["Year 1", "Year 2", "Year 3", "", ""], "line")
+                    "assets/line-years-trial-4.png", "Year 1", ["", "Year 1", "Year 2", "Year 3", ""], "line")
 # area years trial 3 and 4
 question14 = Question("Which year shows the most gold medals?",
                     "assets/area-years-trial-3.png", # Graph 2 shown
-                    "assets/area-years-trial-4.png", "Year 1", ["Year 1", "Year 2", "Year 3", "", ""], "area")
+                    "assets/area-years-trial-4.png", "Year 1", ["", "Year 1", "Year 2", "Year 3", ""], "area")
 
 # line country trial 1 and 2
 question15 = Question("Which country got the most medals?",
