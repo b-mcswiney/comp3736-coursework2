@@ -79,14 +79,43 @@ class QuizUI:
         self.canvas.itemconfig(self.question_text, text=text)
 
     def update_graphs(self):
+        """Manages how images are displayed depending on location in quiz"""
         global img1
         global img2
+
+        hide_img_1 = [9, 11, 13, 14, 16, 18]
+        hide_img_2 = [10, 12, 15, 17]
 
         img1 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path1)))
         self.canvas.itemconfig(self.image1, image=img1)
 
         img2 = ImageTk.PhotoImage(Image.open(os.path.normpath(self.controller.current_question.image_path2)))
         self.canvas.itemconfig(self.image2, image=img2)
+
+
+        # Move images to centre since we only display 1 image for a few questions
+        if self.controller.q_numb == 9:
+            self.canvas.move(self.image1, 300, 0)
+            self.canvas.move(self.image2, -300, 0)
+
+        # Single image display over so move them apart again
+        if self.controller.q_numb == 19:
+            # Ensure both images are shown
+            self.canvas.itemconfig(self.image1, state="normal")
+            self.canvas.itemconfig(self.image2, state="normal")
+
+            self.canvas.move(self.image1, -300, 0)
+            self.canvas.move(self.image2, 300, 0)
+
+        if self.controller.q_numb in hide_img_1:
+            self.canvas.itemconfig(self.image1, state="hidden")
+            self.canvas.itemconfig(self.image2, state="normal")
+
+        elif self.controller.q_numb in hide_img_2:
+            self.canvas.itemconfig(self.image1, state="normal")
+            self.canvas.itemconfig(self.image2, state="hidden")
+
+
 
     def answer_buttons(self):
         """Function to create answer buttons"""
