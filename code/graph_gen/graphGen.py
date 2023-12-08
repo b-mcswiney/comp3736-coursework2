@@ -7,10 +7,9 @@ def gen_line(x_labels, gold_medals, silver_medals, bronze_medals, graph_label, t
     plt.plot(x_labels, silver_medals, label="Silver", color="#C0C0C0")
     plt.plot(x_labels, bronze_medals, label="Bronze", color="#CD7F32")
 
-    plt.xlabel("Country name")
     plt.ylabel("number of medals")
 
-    if trial == "years":
+    if trial == "tournament":
         plt.yticks([5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
 
     elif trial == "country":
@@ -19,10 +18,12 @@ def gen_line(x_labels, gold_medals, silver_medals, bronze_medals, graph_label, t
     plt.minorticks_on()
     plt.legend()
     plt.grid()
-    if trial == "years":
-        plt.title(f"{graph_label}Number of medals won per game in the USA")
+    if trial == "tournament":
+        plt.title(f"{graph_label}Number of medals won per tournament in the USA")
+        plt.xlabel("tournament number")
     else:
         plt.title(f"{graph_label}Number of medals won")
+        plt.xlabel("Country name")
 
     plt.savefig(f"assets/line-{trial}-trial-{graph_numb}.png", bbox_inches="tight")
 
@@ -42,10 +43,12 @@ def gen_area(x_labels, gold_medals, silver_medals, bronze_medals, graph_label, t
 
     plt.legend()
     plt.grid()
-    if trial == "years":
-        plt.title(f"{graph_label}Number of medals won per game in the USA")
+    if trial == "tournament":
+        plt.title(f"{graph_label}Number of medals won per tournament in the USA")
+        plt.xlabel("tournament number")
     else:
         plt.title(f"{graph_label}Number of medals won")
+        plt.xlabel("Country name")
 
     plt.savefig(f"assets/area-{trial}-trial-{graph_numb}.png", bbox_inches="tight")
 
