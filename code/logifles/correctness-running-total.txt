@@ -1,0 +1,47 @@
+
+#### CORRECTNESS ####
+
+question 1  - 4
+question 2  - 4
+question 3  - 4
+question 4  - 4
+question 5  - 4
+question 6  - 4
+question 7  - 4
+question 8  - 1
+question 9  - 4
+question 10 - 4
+question 11 - 4
+question 12 - 4
+question 13 - 4
+question 14 - 4
+question 15 - 0
+question 16 - 4
+question 17 - 4
+question 18 - 4
+question 19 - 3
+question 20 - 4
+
+
+#### INCORRECTNESS ####
+
+question 1  - 0
+question 2  - 0
+question 3  - 0
+question 4  - 0
+question 5  - 0
+question 6  - 0
+question 7  - 0
+question 8  - 3
+question 9  - 0
+question 10 - 0
+question 11 - 0
+question 12 - 0
+question 13 - 0
+question 14 - 0
+question 15 - 4
+question 16 - 0
+question 17 - 0
+question 18 - 0
+question 19 - 1
+question 20 - 0
