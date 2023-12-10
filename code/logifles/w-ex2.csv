@@ -1,0 +1,24 @@
+Session, Timestamp, Quiz_location, Action_type, parameters
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:51:35.899964, QUIZ, START, 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:52:19.827831, QUESTION 1, SUBMIT, answer=A; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:53:14.358958, QUESTION 2, SUBMIT, answer=A; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:53:30.120373, QUESTION 3, SUBMIT, answer=A; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:54:08.408246, QUESTION 4, SUBMIT, answer=A; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:54:31.761004, QUESTION 5, SUBMIT, answer=B; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:55:12.271695, QUESTION 6, SUBMIT, answer=25; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:55:37.756866, QUESTION 7, SUBMIT, answer=B; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:57:00.784527, QUESTION 8, SUBMIT, answer=27; correct=False; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:57:25.586658, QUESTION 9, SUBMIT, answer=1; correct=False; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:57:55.829692, QUESTION 10, SUBMIT, answer=2; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:58:11.438518, QUESTION 11, SUBMIT, answer=2; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:58:25.458818, QUESTION 12, SUBMIT, answer=1; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:58:35.119383, QUESTION 13, SUBMIT, answer=1; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:58:42.948864, QUESTION 14, SUBMIT, answer=1; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:58:56.165649, QUESTION 15, SUBMIT, answer=GB; correct=False; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:59:08.000584, QUESTION 16, SUBMIT, answer=JP; correct=True; graph=line; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:59:24.200597, QUESTION 17, SUBMIT, answer=GER; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 14:59:41.437138, QUESTION 18, SUBMIT, answer=GER; correct=True; graph=area; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 15:01:46.764071, QUESTION 19, SUBMIT, answer=Yes; correct=True; graph=mix; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 15:02:15.549512, QUESTION 20, SUBMIT, answer=No; correct=True; graph=mix; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 15:02:25.079957, QUESTION 21, SUBMIT, answer=line; correct=False; graph=N/A; 
+fdb94d76-569d-43f1-9976-b02dd0b25727, 2023-12-10 15:02:25.080149, QUIZ, END, 
