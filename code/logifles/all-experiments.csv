@@ -1,4 +1,3 @@
-Session, Timestamp, Quiz_location, Action_type, parameters
 7d0cfaee-2731-443c-9df7-19d8d9d2fca6, 2023-12-09 15:15:25.991134, QUIZ, START, 
 7d0cfaee-2731-443c-9df7-19d8d9d2fca6, 2023-12-09 15:15:58.759869, QUESTION 1, SUBMIT, answer=A; correct=True; graph=line; 
 7d0cfaee-2731-443c-9df7-19d8d9d2fca6, 2023-12-09 15:16:26.869681, QUESTION 2, SUBMIT, answer=A; correct=True; graph=line; 
