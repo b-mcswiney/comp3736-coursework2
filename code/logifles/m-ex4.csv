@@ -1,27 +1,4 @@
 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:52:15.510403, QUIZ, START, 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:52:27.864718, QUESTION 1, SUBMIT, answer=A; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:52:38.025015, QUESTION 2, SUBMIT, answer=A; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:52:50.121462, QUESTION 3, SUBMIT, answer=B; correct=False; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:53:01.571453, QUESTION 4, SUBMIT, answer=A; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:53:14.639825, QUESTION 5, SUBMIT, answer=B; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:53:31.990525, QUESTION 6, SUBMIT, answer=25; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:53:43.571475, QUESTION 7, SUBMIT, answer=B; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:54:19.302725, QUESTION 8, SUBMIT, answer=35; correct=False; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:54:59.303504, QUESTION 9, SUBMIT, answer=3; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:55:46.339256, QUESTION 10, SUBMIT, answer=2; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:55:49.721958, QUESTION 11, SUBMIT, answer=2; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:55:54.279035, QUESTION 12, SUBMIT, answer=1; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:56:03.132694, QUESTION 13, SUBMIT, answer=1; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:56:09.466939, QUESTION 14, SUBMIT, answer=1; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:56:29.681659, QUESTION 15, SUBMIT, answer=AUS; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:56:37.570752, QUESTION 16, SUBMIT, answer=JP; correct=True; graph=line; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:56:45.647171, QUESTION 17, SUBMIT, answer=GER; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:56:54.928961, QUESTION 18, SUBMIT, answer=GER; correct=True; graph=area; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:57:07.966316, QUESTION 19, SUBMIT, answer=No; correct=False; graph=mix; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:57:10.534009, QUESTION 20, SUBMIT, answer=No; correct=True; graph=mix; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:57:16.188925, QUESTION 21, SUBMIT, answer=line; correct=False; graph=N/A; 
-5dcb6476-fef8-4d4a-8dfb-7560e2b10118, 2023-12-10 13:57:16.188925, QUIZ, END, 
 2dd86234-817c-4969-95e0-69f39118f02b, 2023-12-10 14:00:37.068825, QUIZ, START, 
 2dd86234-817c-4969-95e0-69f39118f02b, 2023-12-10 14:00:49.829898, QUESTION 1, SUBMIT, answer=A; correct=True; graph=line; 
 2dd86234-817c-4969-95e0-69f39118f02b, 2023-12-10 14:01:02.350338, QUESTION 2, SUBMIT, answer=A; correct=True; graph=line; 
