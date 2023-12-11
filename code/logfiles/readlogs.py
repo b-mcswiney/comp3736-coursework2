@@ -1,4 +1,5 @@
 import datetime
+import matplotlib.pyplot as plt
 
 def readfile(filename):
     file = open(filename, "r")
@@ -39,8 +40,22 @@ def count_correct_answers(filename):
 
     return question_counts
 
-filename = "all-experiments.csv"
-result = count_correct_answers(filename)
+# filename = "all-experiments.csv"
+# result = count_correct_answers(filename)
+
+def user_opinion_bar():
+    user_data = [5, 5]
+    names = ["area", "line"]
+
+    plt.barh(names, user_data)
+    plt.title("Participant graph preference")
+    plt.ylabel("Chart type")
+    plt.xlabel("Number of user votes")
+
+    plt.savefig("user-votes.png", bbox_inches="tight")
+
+user_opinion_bar()    
+
 
 # # Display the counts for each question
 # for question_id, count in result.items():
