@@ -4,17 +4,11 @@
 \subsection{Materials}
 \subsubsection{Language and Libraries}
 The language used to perform the experiment tasks (seen in Figure 1) was python. The following libraries were used in order to achieve this:
-\begin{itemize}
-    \setlength{\itemsep}{1pt}
-	\setlength{\parskip}{0pt}
-	\setlength{\parsep}{0pt}
-    \item \text{Tkinter} --- Used for Graphical User Interface
-    \item \text{Pillow} --- Used for displaying images
-    \item \text{matplotlib.pyplot} --- Used for plotting graphs
-\end{itemize}
+\verb|Tkinter|(Used for Graphical User Interface), \verb|Pillow|(Used for displaying images), \verb|matplotlib.pyplot| and \verb|Plotly| (both used for plotting graphs).
+
 \begin{figure}[H]
     \centering
-    \includegraphics*[width=0.85\textwidth]{quiz-example.png}
+    \includegraphics*[width=0.89\textwidth]{quiz-example.png}
     \caption{Screenshot of first question in the test.}
 \end{figure}
 
@@ -32,13 +26,11 @@ The language used to perform the experiment tasks (seen in Figure 1) was python.
     The architecture of the quiz involves using 3 different classes to keep track of questions, question data and the user interface for the quiz.
     The \verb|Question| class is used to store information involving the questions within the quiz. This information includes: the question itself, image paths 
     for both graphs, the correct answer, all possible answers and the type of graph the question is about (this information is used for logging, discussed later).
-\end{flushleft}
-\begin{flushleft}
+
     The next class we will discuss is that of the \verb|QuizController| class. This class is responsible for keeping track of the current state of the quiz itself.
     To achieve this, the class keeps a list of all questions and a count of the current question number which is iterated upon whenever \verb|next_question()| is called. 
     This class is also used to check if the quiz is over and if a user's answer to the current question is correct, achieved using \verb|more_questions()| and \verb|check_answer()| respectively.
-\end{flushleft}
-\begin{flushleft}
+
     The final class needed for the quiz to function is the \verb|QuizUI| class. This class uses the controller to manage the state of the quiz while simultaneously displaying it to the user.
     During initialisation the class creates all the \verb|tkinter| widgets necessary for the quizes interface (shown in Figure 1). The main loop of the program is contained within the 
     next button which checks if the user has provided an input when pressed. Should the user have provided an input the button will then ask the controller if the user has gotten the question right
