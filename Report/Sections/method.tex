@@ -3,7 +3,7 @@
 
 \subsection{Materials}
 \subsubsection{Language and Libraries}
-The language used to perform the experiment tasks (seen in Figure 1) was python. The following libraries were used in order to achieve this:
+\quad The language used to perform the experiment tasks (seen in Figure 1) was python. The following libraries were used in order to achieve this:
 \verb|Tkinter|(Used for Graphical User Interface), \verb|Pillow|(Used for displaying images), \verb|matplotlib.pyplot| and \verb|Plotly| (both used for plotting graphs).
 
 \begin{figure}[H]
@@ -15,7 +15,7 @@ The language used to perform the experiment tasks (seen in Figure 1) was python.
 \subsubsection{How the quiz works}
 \subsubsection*{Graph Generation}
 \begin{flushleft}
-    Before the quiz can be run a separate function called \verb|generate_graphs()| needs to be run to create the graphs.
+    \quad Before the quiz can be run a separate function called \verb|generate_graphs()| needs to be run to create the graphs.
     This function uses pre-defined data that has been randomly generated from using real olympic medal data from the following Olympic games:
 
     2008(found here: \url{https://olympics.com/en/olympic-games/beijing-2008/medals}), 
@@ -30,15 +30,15 @@ The language used to perform the experiment tasks (seen in Figure 1) was python.
     
 \subsubsection*{Classes}
 \begin{flushleft}
-    The architecture of the quiz involves using 3 different classes to keep track of questions, question data and the user interface for the quiz.
+    \quad The architecture of the quiz involves using 3 different classes to keep track of questions, question data and the user interface for the quiz.
     The \verb|Question| class is used to store information involving the questions within the quiz. This information includes: the question itself, image paths 
     for both graphs, the correct answer, all possible answers and the type of graph the question is about (this information is used for logging, discussed later).
 
-    The next class we will discuss is that of the \verb|QuizController| class. This class is responsible for keeping track of the current state of the quiz itself.
+    \quad The next class we will discuss is that of the \verb|QuizController| class. This class is responsible for keeping track of the current state of the quiz itself.
     To achieve this, the class keeps a list of all questions and a count of the current question number which is iterated upon whenever \verb|next_question()| is called. 
     This class is also used to check if the quiz is over and if a user's answer to the current question is correct, achieved using \verb|more_questions()| and \verb|check_answer()| respectively.
 
-    The final class needed for the quiz to function is the \verb|QuizUI| class. This class uses the controller to manage the state of the quiz while simultaneously displaying it to the user.
+    \quad The final class needed for the quiz to function is the \verb|QuizUI| class. This class uses the controller to manage the state of the quiz while simultaneously displaying it to the user.
     During initialisation the class creates all the \verb|tkinter| widgets necessary for the quizes interface (shown in Figure 1). The main loop of the program is contained within the 
     next button which checks if the user has provided an input when pressed. Should the user have provided an input the button will then ask the controller if the user has gotten the question right
     and log the user's answer to the question appropriately (log example shown in Table 1). The button will then ask the controller if the user has reached the end of the quiz or not, should the user
